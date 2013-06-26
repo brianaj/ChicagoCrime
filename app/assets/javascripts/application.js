@@ -47,12 +47,7 @@ function draw_tooltip_map(ward_data){
     // same code as the heat map
     tooltip_ward_map.getLayer('chicago').style({
       fill: function(d){ 
-console.log(d.ward)
-        if(ward_data[d.ward] == 0){
-            return "#fff";
-          } else {
             return color_for_value(ward_data[d.ward], ward_data);
-          }
         }
     });
 
@@ -65,11 +60,12 @@ console.log(d.ward)
         // store the color of the ward pre-hover, so we
         // can reset the color when the user hovers
         // over another ward.
-        $(obj).data('previous-fill-color', $(obj).attr('fill')); 
+        $(obj).data('previous-fill-color', $(obj).attr('fill'));
         $(obj).attr("fill", hover_color); 
       });
 
       $(obj).bind("mouseleave", function(){
+        console.log($(obj).data('previous-fill-color'));
         $(obj).attr("fill", $(obj).data('previous-fill-color'));
       });
 
@@ -79,7 +75,7 @@ console.log(d.ward)
         animation: false, 
         placement: 'left', 
         title:     "Ward " + $.data(obj,'ward') + ": " +  
-                   (number_of_signups || '0') + " tester" + 
+                   (number_of_signups || '0') + " crime" + 
                    (number_of_signups == 1 ? '' : 's') 
       });
     });      
@@ -91,8 +87,8 @@ console.log(d.ward)
 function color_for_value(val, all_values){
 
   // colors for map, in increasing darkness
-  var color_range = ["#CCFFFF", "#99CCCC", 
-                    "#669999", "#336666", "#003333"];
+  var color_range = ["#4e8a21", "#91b52b",  
+                    "#faec37", "#e78b21", "#da1903"];
 
   // find all uniq values in all_values, return them sorted
   var counts = _.sortBy(_.uniq(_.values(all_values)), 
@@ -100,7 +96,7 @@ function color_for_value(val, all_values){
   );
 
   // pop zeros, will plot as blank regions
-  if(counts[0] == 0 ){ counts.shift() }
+  //if(counts[0] == 0 ){ counts.shift() }
 
   // find the index of the given value in 
   // the sorted collection of all values
@@ -116,6 +112,12 @@ function color_for_value(val, all_values){
 }
 
 $.getJSON("output.json", function(data){
-console.log(data);
-draw_tooltip_map(data);
+//50 wards. Put 0 if not present
+   for(var i = 1; i<=50; i++){ 
+	if(!data[i]){
+		data[i]=0
+	}
+   }
+   console.log(data)
+   draw_tooltip_map(data);
 });
