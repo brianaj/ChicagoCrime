@@ -126,6 +126,6 @@ $.getJSON("output.json", function(data){
 		data[i]=0
 	}
    }
-   console.log(data)
+   delete data[""];
    draw_tooltip_map(data);
 });
