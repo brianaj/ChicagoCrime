@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
     params_string = String.new
-<<<<<<< HEAD
     puts params[:crime_type]
     if(params[:crime_type] != "All" and !params[:crime_type].nil?) 
       params_string << %Q( -c #{params[:crime_type]})
