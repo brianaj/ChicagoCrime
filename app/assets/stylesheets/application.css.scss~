@@ -15,10 +15,9 @@
 
 
 
- body {
-
+body {
      margin: 0;
-     background: asset-url("http://www.ettractions.com/activity_blogs/wp-content/uploads/2013/01/Chicago-Skyline.jpg", image);
+     background: asset-url("Chicago-Skyline.jpg", image);
      background-size:100% 100%;
      background-repeat:no-repeat;
     display: compact;
@@ -26,7 +25,6 @@
 }
 
 .content {
- /*background-image: asset-url("chicago_skyline_at_dusk.jpg", image) ;*/
   background-color: #ffffff;
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
