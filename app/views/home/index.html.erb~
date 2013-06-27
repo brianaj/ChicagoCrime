@@ -1,5 +1,8 @@
 
 
+ <div class="span3 well" style="color:white; background-color: rgba(0, 0, 0, 0.5); ">
+
+
 <%= form_tag("/", :method => "get") do %>
   <%= label_tag(:crime_type, "Crime type:") %>
   <%= select_tag :crime_type, "<option>ARSON</option><option>THEFT</option><option>ASSAULT</option><option>BATTERY</option><option>ROBBERY</option><option>GAMBLING</option><option>STALKING</option><option>KIDNAPPING</option><option>INTIMIDATION</option><option>NON-CRIMINAL</option><option>PUBLIC INDECENCY</option><option>LIQUOR LAW VIOLATION</option><option>OFFENSE INVOLVING CHILDREN</option><option>INTERFERE WITH PUBLIC OFFICER</option><option>INTERFERENCE WITH PUBLIC OFFICER</option><option>BURGLARY</option><option>HOMICIDE</option><option>NARCOTICS</option><option>OBSCENITY</option><option>RITUALISM</option><option>SEX OFFENSE</option><option>PROSTITUTION</option><option>OTHER OFFENSE</option><option>OTHER OFFENSE </option><option>CRIMINAL DAMAGE</option><option>CRIMINAL TRESPASS</option><option>WEAPONS VIOLATION</option><option>DECEPTIVE PRACTICE</option><option>CRIM SEXUAL ASSAULT</option><option>MOTOR VEHICLE THEFT</option><option>PUBLIC PEACE VIOLATION</option><option>OTHER NARCOTIC VIOLATION</option><option>OFFENSES INVOLVING CHILDREN</option><option>NON-CRIMINAL</option><option>SUBJECT SPECIFIED</option>".html_safe %>
@@ -11,5 +14,8 @@
   <%= submit_tag(value = "Search", options = {:class => "btn btn-primary"}) %>
 <% end %>
 
-<li class="span4 offset1">
-<div id="tooltip-map" class="center"></div></li>
+</div>
+<div class="span7 well" style="background-color: rgba(0, 0, 0, 0.5); ">
+
+
+<div id="tooltip-map" class="center"></div></div>

@@ -37,7 +37,7 @@ function draw_tooltip_map(ward_data){
       styles : {
 
         // heavy border stroke
-        'stroke-width': '10px'
+        'stroke-width': '3.5px'
       }
 		})
     layer = tooltip_ward_map.getLayer('chicago');
